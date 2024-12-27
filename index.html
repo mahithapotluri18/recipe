@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andhra Ruchulu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Andhra Ruchulu</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search recipes...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="menu">
+            <a href="#" onclick="showSection('home')" class="active">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Categories <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <div class="category-group">
+                        <h3>Meal Types</h3>
+                        <a href="#" onclick="filterByCategory('breakfast')">Breakfast</a>
+                        <a href="#" onclick="filterByCategory('lunch')">Lunch</a>
+                        <a href="#" onclick="filterByCategory('snacks')">Snacks</a>
+                        <a href="#" onclick="filterByCategory('dinner')">Dinner</a>
+                    </div>
+                    <div class="category-group">
+                        <h3>Special</h3>
+                        <a href="#" onclick="filterByCategory('festive')">Festive Specials</a>
+                        <a href="#" onclick="filterByCategory('sweets')">Sweets</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" onclick="filterByType('veg')">Vegetarian</a>
+            <a href="#" onclick="filterByType('nonveg')">Non-Vegetarian</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Discover Authentic Andhra Cuisine</h2>
+            <p>Explore traditional recipes from the heart of Andhra Pradesh</p>
+        </section>
+
+        <div class="category-buttons">
+            <button onclick="filterByCategory('breakfast')">
+                <i class="fas fa-coffee"></i>
+                Breakfast
+            </button>
+            <button onclick="filterByCategory('lunch')">
+                <i class="fas fa-utensils"></i>
+                Lunch
+            </button>
+            <button onclick="filterByCategory('snacks')">
+                <i class="fas fa-cookie"></i>
+                Snacks
+            </button>
+            <button onclick="filterByCategory('dinner')">
+                <i class="fas fa-moon"></i>
+                Dinner
+            </button>
+            <button onclick="filterByCategory('festive')">
+                <i class="fas fa-star"></i>
+                Festive
+            </button>
+            <button onclick="filterByCategory('sweets')">
+                <i class="fas fa-candy-cane"></i>
+                Sweets
+            </button>
+        </div>
+
+        <section class="featured-recipes">
+            <div id="categoryTitle" class="category-header" style="display: none;">
+                <h2></h2>
+                <p></p>
+            </div>
+            <div class="recipe-grid" id="recipeGrid">
+                <!-- Recipe cards will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Recipe Modal -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="recipeDetails"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Andhra Ruchulu. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
